@@ -9,7 +9,9 @@ jobs:
         with:
           node-version: 10
       - run: npm install
-      - uses: iCrawl/action-tsc@v1
+      - run: npx tsc
+      - run: rm -r src && rm -r .github && mv dist/* .
+      - run: ls -l
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
