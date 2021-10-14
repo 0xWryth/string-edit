@@ -163,40 +163,14 @@ export function findCharIndexes(str: string, to_find: string): Array<any> {
  * @param {Boolean} repeat_characters Defaulty false
  * @returns {any} Array or string with extracted characters.
  */
-export function extractCharacters(str: string, to_array: boolean, repeat_characters: boolean): any {
-  if(!to_array && to_array !== false) to_array = true;
-  if(!repeat_characters && repeat_characters !== false) repeat_characters = false;
-
-  var characters: string[] = [];
-  var characters_string = "";
-
-  for(let i=0; i < str.length; i++) {
-
-    //Extract characters
-    if(to_array) { //Extract to Array
-      if(repeat_characters) {
-        characters.push(str[i]);
-      } else {
-        if(!characters.includes(str[i])) {
-          characters.push(str[i]);
-        }
-      }
-    } else { //Extract to String
-      if(repeat_characters) {
-        characters_string += str[i];
-      } else {
-        if(!characters_string.includes(str[i])) {
-          characters_string += str[i];
-        }
-      }
-    }
+export function extractCharacters(str: string, to_array: boolean = true, repeat_characters: boolean = false): Array<String> | string {
+  var res: String[] = str.split("");
+  
+  if (!repeat_characters) {
+    res = Array.from(new Set<String>(res));
   }
 
-  if(to_array) {
-    return characters;
-  } else {
-    return characters_string;
-  }
+  return to_array ? res : res.join("");
 }
 
 /**

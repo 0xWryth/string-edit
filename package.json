@@ -1,10 +1,11 @@
 {
-  "name": "string-edit",
-  "version": "1.3",
+  "name": "@0xwryth/string-edit",
+  "version": "1.3.1",
   "description": "Easy-to-Use String Edit and String Tools.",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "node ./test/string-edit-test.js"
+    "test": "node ./test/string-edit-test.js",
+    "build": "tsc"
   },
   "keywords": [
     "string",
@@ -26,5 +27,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^9.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
