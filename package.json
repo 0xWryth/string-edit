@@ -1,0 +1,27 @@
+{
+  "name": "string-edit",
+  "version": "1.2.14",
+  "description": "Easy-to-Use String Edit and String Tools.",
+  "main": "stringEdit.js",
+  "scripts": {
+    "test": "node ./test/string-edit-test.js"
+  },
+  "keywords": [
+    "string",
+    "str",
+    "edit",
+    "simple",
+    "tool",
+    "case",
+    "latin",
+    "latinize",
+    "remove",
+    "shuffle"
+  ],
+  "author": "BramboraSK",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}
