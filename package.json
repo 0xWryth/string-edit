@@ -26,7 +26,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^9.1.2"
+    "mocha": "^9.1.2",
+    "typescript": "^4.4.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
