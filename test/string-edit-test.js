@@ -1,4 +1,4 @@
-﻿const stringEdit = require('../stringEdit');
+﻿const stringEdit = require('../dist');
 
 if(stringEdit.removeNumbers('2727272727o01245275274574775272ra7227277272272n1g227272727e') == "orange") {
   console.log("removeNumbers() works");

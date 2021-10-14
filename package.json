@@ -1,8 +1,8 @@
 {
   "name": "string-edit",
-  "version": "1.2.14",
+  "version": "1.3",
   "description": "Easy-to-Use String Edit and String Tools.",
-  "main": "stringEdit.js",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "node ./test/string-edit-test.js"
   },
@@ -19,9 +19,12 @@
     "shuffle"
   ],
   "author": "BramboraSK",
+  "maintainers": [
+    "0xWryth"
+  ],
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.1"
+    "mocha": "^9.1.2"
   }
 }

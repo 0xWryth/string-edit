@@ -1,4 +1,6 @@
-﻿<!-- BADGES/ -->
+﻿Typescript version of BramboraSK's string-edit package. 
+
+<!-- BADGES/ -->
 
 <span class="badge-npmversion"><a href="https://npmjs.org/package/string-edit" title="View this project on NPM"><img src="https://img.shields.io/npm/v/string-edit.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/string-edit" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/string-edit.svg" alt="NPM downloads" /></a></span>
