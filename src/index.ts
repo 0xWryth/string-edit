@@ -59,17 +59,9 @@ export function removeSpecialCharacters(str: string): string {
  * @returns {String} String with randomized the case of characters.
  */
 export function randomCase(str: string): string {
-  var edited = "";
-  for(let i=0; i < str.length; i++) {
-    //Generate letter with random case
-    var random = Math.round(Math.random());
-
-    var new_letter = random === 0 ? str[i].toLowerCase() : str[i].toUpperCase();
-
-    edited = edited + new_letter;
-  }
-
-  return edited;
+  return str.split("")
+    .map(letter => Math.random() < 0.5 ? letter.toLowerCase() : letter.toUpperCase())
+    .join("");
 }
 
 /**
@@ -77,37 +69,13 @@ export function randomCase(str: string): string {
  * For example: "strawberry" -> "StRaWbErRy"
  * @param {String} str
  * @param {Boolean} start_with_uppercase Defaultly true
- * @param {Boolean} ignore_whitespace Defaultly true
  * @returns {String} String with alternated case.
  */
-export function alternateCase(str: string, start_with_uppercase: boolean, ignore_whitespace: boolean): string {
-  if(!start_with_uppercase && start_with_uppercase !== false) start_with_uppercase = true;
-  if(!ignore_whitespace && ignore_whitespace !== false) ignore_whitespace = true;
-  
-  var edit = ignore_whitespace ? str.replace(/ /g, "") : str;
-  var edited = "";
-
-  //Alternate case based on given params
-  for(let i=0,y=0; i < edit.length, y < str.length; i++, y++) {
-    if(edit[i] === undefined) continue;
-
-    //Check if the current character is whitespace and ignore it
-    if(ignore_whitespace && str[y] == " ") {
-      edited = edited + " ";
-      i--;
-      continue;
-    }
-
-    //Alternate
-    if(i % 2 == 0) {
-      edited += start_with_uppercase ? edit[i].toUpperCase() : edit[i].toLowerCase();
-    } else {
-      edited += !start_with_uppercase ? edit[i].toUpperCase() : edit[i].toLowerCase();
-    }
-
-  }
-
-  return edited;
+export function alternateCase(str: string, start_with_uppercase: boolean): string {
+  const remainder = start_with_uppercase ? 0 : 1;
+  return str.split("")
+    .map((letter, index) => index % 2 === remainder ? letter.toUpperCase() : letter.toLowerCase())
+    .join("");
 }
 
 /**
@@ -127,14 +95,9 @@ export function reverseContent(str: string): string {
  * @returns {String} String with reversed case.
  */
 export function reverseCase(str: string): string {
-  var edited = "";
-
-  //Reverse case of every letter
-  for(let i=0; i < str.length; i++) {
-    edited += str[i] === str[i].toLowerCase() ? str[i].toUpperCase() : str[i].toLowerCase();
-  }
-
-  return edited;
+  return str.split("")
+    .map(letter => letter === letter.toLowerCase() ? letter.toUpperCase() : letter.toLowerCase())
+    .join("");
 }
 
 /**
@@ -144,14 +107,10 @@ export function reverseCase(str: string): string {
  * @param {String} to_find
  * @returns {Array} Array with found indexes.
  */
-export function findCharIndexes(str: string, to_find: string): Array<any> {
-  var found = [];
-
-  for(let i=0; i < str.length; i++) {
-    if(str[i] === to_find) found.push(i);
-  }
-
-  return found;
+export function findCharIndexes(str: string, to_find: string): Array<number> {
+  return str.split("")
+    .map((letter, index) => letter === to_find ? index : NaN)
+    .filter(index => !isNaN(index));
 }
 
 
